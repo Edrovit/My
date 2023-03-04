@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">My</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">For the next few days, Null Null can expect a mix of positive and negative events. On the positive side, they may find themselves feeling more creative and inspired, and may be able to make progress on projects that have been stalled. They may also find themselves feeling more connected to their spiritual side, and may be able to tap into their intuition more easily. On the other hand, they may find themselves feeling more anxious and overwhelmed, and may need to take some time to relax and recharge. They may also find themselves feeling more sensitive to criticism, and may need to take a step back and look at the bigger picture. Overall, Null Null should take the time to focus on their mental and emotional wellbeing, and to take advantage of the positive energy that is available to them.</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="hint_password_field">First Name</string>
+    <string name="hint_FirstName">FirastName</string>
+    <string name="hint_LastName">LastName</string>
+    <string name="hint_BirthDate">dd/mm/yyyy</string>
+    <string name="hint_BirthTime">hh:mm</string>
+    <string name="birthdate">Birth date</string>
+    <string name="birthtime">Birth Time</string>
+    <string name="hint_BirthCity">Birth City</string>
+    <string name="Save">Save</string>
+    <string name="Cancel">Cancel</string>
+</resources>

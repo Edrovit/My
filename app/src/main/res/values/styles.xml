@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="MyEditText"></style>
+
+    <style name="MyHintText">First Name</style>
+
+    <style name="FirstNameHint">First Name</style>
+
+    <style name="LastNameHint">Last Name</style>
+
+    <style name="BirthDateHint">dd.mm.yyyy</style>
+
+    <style name="BirthTimeHint">hh:mm</style>
+
+    <style name="BirthCityHint">Birth city</style>
+</resources>

@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SecondFragment">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        app:layout_constraintLeft_toRightOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:background="@drawable/settingsback"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/imagesetting"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <EditText
+        android:id="@+id/FirstName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="70dp"
+
+        android:background="@drawable/field"
+        android:fontFamily="verdana"
+        android:hint="@string/hint_FirstName"
+        android:inputType="textPersonName"
+
+        android:paddingLeft="16dp"
+        android:textColor="#7E7E7E"
+
+        android:textColorHighlight="#7E7E7E"
+        android:textColorHint="#7E7E7E"
+        android:textColorLink="#7E7E7E"
+        android:textStyle="bold"
+        android:theme="@style/MyEditText"
+        app:hintTextAppearance="@style/FirstNameHint"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/LastName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="130dp"
+        android:background="@drawable/field"
+        android:fontFamily="verdana"
+        android:hint="@string/hint_LastName"
+        android:inputType="textPersonName"
+        android:paddingLeft="16dp"
+        android:layout_marginEnd="50dp"
+        android:textColor="#7E7E7E"
+        android:textColorHighlight="#7E7E7E"
+        android:textColorHint="#7E7E7E"
+        android:textColorLink="#7E7E7E"
+
+        android:textStyle="bold"
+        android:theme="@style/MyEditText"
+
+        app:hintTextAppearance="@style/LastNameHint"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/BirthDate"
+        android:layout_width="138dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_marginTop="200dp"
+        android:layout_marginEnd="64dp"
+        android:background="@drawable/field"
+        android:fontFamily="verdana"
+
+        android:hint="@string/hint_BirthDate"
+        android:inputType="textPersonName"
+        android:paddingLeft="16dp"
+        android:textColor="#7E7E7E"
+
+        android:textColorHighlight="#7E7E7E"
+        android:textColorHint="#7E7E7E"
+
+        android:textColorLink="#7E7E7E"
+        android:textStyle="bold"
+        android:theme="@style/MyEditText"
+        app:hintTextAppearance="@style/BirthDateHint"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/BirthTime"
+        android:layout_width="138dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_marginTop="260dp"
+        android:layout_marginEnd="64dp"
+        android:background="@drawable/field"
+        android:fontFamily="verdana"
+
+        android:hint="@string/hint_BirthTime"
+        android:inputType="textPersonName"
+        android:paddingLeft="40dp"
+        android:textColor="#7E7E7E"
+
+        android:textColorHighlight="#7E7E7E"
+        android:textColorHint="#7E7E7E"
+
+        android:textColorLink="#7E7E7E"
+        android:textStyle="bold"
+        android:theme="@style/MyEditText"
+        app:hintTextAppearance="@style/BirthTimeHint"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/BirthDate_text"
+        android:layout_width="200dp"
+        android:layout_height="30dp"
+        android:textColor="#252525"
+        android:layout_marginTop="210dp"
+        android:layout_marginEnd="8dp"
+        android:gravity="left"
+        android:paddingLeft="70dp"
+        android:text="@string/birthdate"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/BirthDate"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/BirthDate_time"
+        android:layout_width="200dp"
+        android:layout_height="30dp"
+        android:textColor="#252525"
+        android:layout_marginTop="270dp"
+        android:layout_marginEnd="8dp"
+        android:gravity="left"
+        android:paddingLeft="70dp"
+        android:text="@string/birthtime"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/BirthDate"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/BirthTime_text"
+        android:layout_width="138dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_marginTop="260dp"
+        android:layout_marginEnd="64dp"
+        android:background="@drawable/field"
+        android:fontFamily="verdana"
+
+        android:hint="@string/hint_BirthTime"
+        android:inputType="textPersonName"
+        android:paddingLeft="40dp"
+        android:textColor="#7E7E7E"
+
+        android:textColorHighlight="#7E7E7E"
+        android:textColorHint="#7E7E7E"
+
+        android:textColorLink="#7E7E7E"
+        android:textStyle="bold"
+        android:theme="@style/MyEditText"
+        app:hintTextAppearance="@style/BirthTimeHint"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+
+    <EditText
+        android:id="@+id/BirthCity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="330dp"
+        android:background="@drawable/field"
+        android:fontFamily="verdana"
+        android:hint="@string/hint_BirthCity"
+        android:inputType="textPersonName"
+        android:paddingLeft="16dp"
+        android:layout_marginEnd="50dp"
+        android:textColor="#7E7E7E"
+        android:textColorHighlight="#7E7E7E"
+        android:textColorHint="#7E7E7E"
+        android:textColorLink="#7E7E7E"
+
+        android:textStyle="bold"
+        android:theme="@style/MyEditText"
+
+        app:hintTextAppearance="@style/BirthCityHint"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/ButtonSave"
+        android:layout_width="134dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="150dp"
+        android:layout_marginBottom="90dp"
+        android:background="@drawable/savebutton"
+        android:text="@string/Save"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/ButtonCancel"
+        android:layout_width="134dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="150dp"
+        android:layout_marginBottom="90dp"
+        android:background="@drawable/cancelbutton"
+        android:text="@string/Cancel"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
