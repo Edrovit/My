@@ -10,27 +10,46 @@
 
     <TextView
         android:id="@+id/textview_first"
-        android:layout_width="360dp"
+        android:layout_width="340dp"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="160dp"
         android:background="@drawable/mainbubble"
-        android:fontFamily="sans-serif"
+        android:fontFamily="@font/robotoflexregular"
         android:gravity="center_horizontal"
-        android:paddingLeft="15dp"
+        android:paddingLeft="12dp"
         android:paddingTop="30dp"
-        android:paddingRight="15dp"
+        android:paddingRight="12dp"
         android:paddingBottom="10dp"
         android:text="@string/hello_first_fragment"
         android:textAlignment="center"
-        android:textColor="#575555"
+        android:textColor="#000000"
         android:textDirection="firstStrongRtl"
         android:textIsSelectable="true"
         android:textSize="14sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginBottom="160dp"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <TextView
+        android:id="@+id/textview_data"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+
+        android:fontFamily="@font/robotoflexregular"
+        android:gravity="center_horizontal"
+        android:paddingLeft="15dp"
+        android:paddingTop="2dp"
+        android:paddingRight="15dp"
+        android:text="@string/prognozedata"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textDirection="firstStrongRtl"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="@+id/textview_first"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 
     <Button
@@ -64,13 +83,12 @@
         app:layout_constraintTop_toTopOf="parent" />
 
 
-
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/button_first"
         android:layout_width="284dp"
         android:layout_height="44dp"
         android:layout_marginTop="-90dp"
-
+        android:fontFamily="@font/robotoflexregular"
         android:background="@drawable/mainbutton"
         android:selectAllOnFocus="false"
         android:shadowColor="#3C000000"
@@ -83,4 +101,18 @@
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/textview_first" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="@style/ProgressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:progressTint="@color/purpur"
+        android:progressBackgroundTint="@color/purpur"
+        app:layout_constraintBottom_toTopOf="@+id/button_first"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+
+        />
 </androidx.constraintlayout.widget.ConstraintLayout>

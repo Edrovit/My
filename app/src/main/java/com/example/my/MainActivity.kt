@@ -9,7 +9,11 @@ import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.EditText
 import com.example.my.databinding.ActivityMainBinding
+import okhttp3.OkHttpClient
+import okhttp3.Request
+import java.io.IOException
 
 class MainActivity : AppCompatActivity() {
 
@@ -18,7 +22,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
+        val editText = findViewById<EditText>(R.id.FirstName)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 /*
@@ -34,6 +38,9 @@ class MainActivity : AppCompatActivity() {
         }
 
  */
+
+
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -58,3 +65,4 @@ class MainActivity : AppCompatActivity() {
                 || super.onSupportNavigateUp()
     }
 }
+

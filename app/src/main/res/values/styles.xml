@@ -14,4 +14,9 @@
     <style name="BirthTimeHint">hh:mm</style>
 
     <style name="BirthCityHint">Birth city</style>
+
+    <style name="ProgressBarStyle">
+        <item name="colorAccent">@color/purpur</item>
+    </style>
+
 </resources>
