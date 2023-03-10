@@ -79,7 +79,9 @@
 
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
+
+
+    <com.vicmikhailau.maskededittext.MaskedEditText
         android:id="@+id/BirthDate"
         android:layout_width="138dp"
         android:layout_height="wrap_content"
@@ -88,9 +90,9 @@
         android:layout_marginEnd="64dp"
         android:background="@drawable/field"
         android:fontFamily="@font/robotoflexregular"
-
+        app:mask="##/##/####"
         android:hint="@string/hint_BirthDate"
-        android:inputType="textPersonName"
+        android:inputType="number"
         android:paddingLeft="16dp"
         android:textColor="#7E7E7E"
 
@@ -104,7 +106,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintLeft_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
 
 
     <TextView
@@ -141,17 +142,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
+
+
+    <com.vicmikhailau.maskededittext.MaskedEditText
         android:id="@+id/BirthTime"
         android:layout_width="138dp"
         android:layout_height="wrap_content"
-
+        app:mask="##:##"
         android:layout_marginTop="260dp"
         android:layout_marginEnd="64dp"
         android:background="@drawable/field"
         android:fontFamily="@font/robotoflexregular"
         android:hint="@string/hint_BirthTime"
-        android:paddingStart="48dp"
+        android:paddingStart="40dp"
         android:textColor="#7E7E7E"
         android:textColorHighlight="#7E7E7E"
         android:textColorHint="#7E7E7E"
@@ -161,7 +164,10 @@
         app:hintTextAppearance="@style/BirthTimeHint"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintLeft_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent"
+        android:inputType="number"/>
+
+
 
 
 
