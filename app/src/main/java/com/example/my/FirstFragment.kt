@@ -8,9 +8,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.ProgressBar
 import android.widget.TextView
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.navigation.fragment.findNavController
 import com.example.my.databinding.FragmentFirstBinding
 import com.google.android.material.bottomsheet.BottomSheetBehavior
@@ -19,6 +21,8 @@ import io.ktor.client.response.*
 import io.ktor.client.request.*
 import io.ktor.http.*
 import kotlinx.coroutines.*
+
+
 
 
 /**
@@ -52,13 +56,18 @@ class FirstFragment : Fragment() {
         val editName2 = view.findViewById<TextView>(R.id.textview_data)
         editName2.visibility = View.INVISIBLE
 
-        val bottomSheet = view.findViewById<LinearLayout>(R.id.bottom_sheet)
+        val bottomSheet = view.findViewById<ConstraintLayout>(R.id.bottom_sheet)
         val bottomSheetBehavior = BottomSheetBehavior.from(bottomSheet)
 
 
         bottomSheetBehavior.state = BottomSheetBehavior.STATE_COLLAPSED
 
-        binding.buttonFirst.setOnClickListener {
+
+
+
+        val button = view.findViewById<Button>(R.id.button_first)
+
+        button.setOnClickListener {
 
 
             bottomSheetBehavior.state = BottomSheetBehavior.STATE_EXPANDED

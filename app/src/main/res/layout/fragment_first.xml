@@ -36,7 +36,6 @@
         android:id="@+id/textview_data"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-
         android:fontFamily="@font/robotoflexregular"
         android:gravity="center_horizontal"
         android:paddingLeft="15dp"
@@ -51,6 +50,7 @@
         app:layout_constraintTop_toTopOf="@+id/textview_first"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
 
 
     <Button
@@ -78,30 +78,10 @@
         android:background="@drawable/settingsbtn"
         android:paddingLeft="15dp"
         android:paddingTop="10dp"
-        android:paddingRight="0dp"
         android:selectAllOnFocus="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/button_first"
-        android:layout_width="284dp"
-        android:layout_height="44dp"
-        android:layout_marginTop="-90dp"
-        android:fontFamily="@font/robotoflexregular"
-        android:background="@drawable/mainbutton"
-        android:selectAllOnFocus="false"
-        android:shadowColor="#3C000000"
-        android:text="@string/next"
-        android:textColor="#FAE7C9"
-        android:textSize="18sp"
-        app:barrierAllowsGoneWidgets="false"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textview_first" />
 
     <ProgressBar
         android:id="@+id/progressBar"
@@ -110,13 +90,22 @@
         android:layout_height="wrap_content"
         android:progressTint="@color/purpur"
         android:progressBackgroundTint="@color/purpur"
-        app:layout_constraintBottom_toTopOf="@+id/button_first"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
 
         />
 
-    <include layout="@layout/button_sheet" />
+    <include layout="@layout/button_sheet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/bottomlay"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

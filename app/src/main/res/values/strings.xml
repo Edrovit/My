@@ -20,4 +20,7 @@
     <string name="Save">Save</string>
     <string name="Cancel">Cancel</string>
     <string name="prognozedata">25.02.23-27.02.23</string>
+    <string name="chips_cmn">Cummon</string>
+    <string name="chips_love">Love</string>
+    <string name="chips_money">Money</string>
 </resources>
