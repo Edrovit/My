@@ -70,7 +70,7 @@ class FirstFragment : Fragment() {
         button.setOnClickListener {
 
 
-            bottomSheetBehavior.state = BottomSheetBehavior.STATE_EXPANDED
+            bottomSheetBehavior.state = BottomSheetBehavior.STATE_COLLAPSED
             val mySharedPreferences: SharedPreferences = requireActivity().getSharedPreferences("myPrefs", Context.MODE_PRIVATE)
 
             val Curl_name: String = mySharedPreferences.getString("NAME", null).toString()
