@@ -8,10 +8,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout
 import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.navigation.fragment.findNavController
 import com.example.my.databinding.FragmentFirstBinding
+import com.google.android.material.bottomsheet.BottomSheetBehavior
 import io.ktor.client.*
 import io.ktor.client.response.*
 import io.ktor.client.request.*
@@ -50,10 +52,16 @@ class FirstFragment : Fragment() {
         val editName2 = view.findViewById<TextView>(R.id.textview_data)
         editName2.visibility = View.INVISIBLE
 
+        val bottomSheet = view.findViewById<LinearLayout>(R.id.bottom_sheet)
+        val bottomSheetBehavior = BottomSheetBehavior.from(bottomSheet)
 
+
+        bottomSheetBehavior.state = BottomSheetBehavior.STATE_COLLAPSED
 
         binding.buttonFirst.setOnClickListener {
 
+
+            bottomSheetBehavior.state = BottomSheetBehavior.STATE_EXPANDED
             val mySharedPreferences: SharedPreferences = requireActivity().getSharedPreferences("myPrefs", Context.MODE_PRIVATE)
 
             val Curl_name: String = mySharedPreferences.getString("NAME", null).toString()
