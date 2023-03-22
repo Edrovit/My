@@ -13,7 +13,7 @@
         android:layout_height="277dp"
         android:outlineProvider="bounds"
         android:background="@drawable/bottom_pic1"
-        app:behavior_peekHeight="125dp"
+        app:behavior_peekHeight="115dp"
         android:clipToPadding="false"
         app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
         app:layout_constraintBottom_toBottomOf="parent">
@@ -107,7 +107,7 @@
 
         <RadioGroup
             android:id="@+id/mobiprint_mod_radio_group"
-            android:layout_width="284dp"
+            android:layout_width="283dp"
             android:layout_height="37dp"
             android:orientation="horizontal"
             android:weightSum="1"
@@ -116,51 +116,55 @@
             android:fontFamily="@font/robotoflexregular"
             android:gravity="center"
             app:layout_constraintTop_toBottomOf="@+id/button_first"
-            android:layout_marginTop="1dp"
+            android:layout_marginTop="39dp"
             android:background="@drawable/radioback"
             android:textColor="#7E7E7E"
-            android:textSize="12dp"
+            android:textSize="12sp"
             android:textStyle="bold"
+          
 
             >
 
             <RadioButton
                 android:id="@+id/radio_two"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_width="89dp"
+                android:layout_height="37dp"
                 android:layout_weight="0.33"
                 android:text="@string/two_days"
-                android:textColor="#7E7E7E"
-                android:textSize="12dp"
+                android:textSize="12sp"
                 android:textStyle="bold"
-                android:background="@null"
-                android:button="@drawable/radioon"/>
+                android:gravity="center"
+                android:textColor="@drawable/radiotextselector"
+                android:background="@drawable/radioon"
+                android:checked="true"
+                android:button="@android:color/transparent"/>
 
             <RadioButton
                 android:id="@+id/radio_seven"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_width="89dp"
+                android:layout_height="37dp"
                 android:layout_weight="0.33"
                 android:text="@string/seven_days"
-                android:textSize="12dp"
+                android:textSize="12sp"
                 android:textStyle="bold"
-                android:textColor="#7E7E7E"
-                android:background="@null"
-                android:button="@drawable/radioon"/>
+                android:gravity="center"
+                android:textColor="@drawable/radiotextselector"
+                android:background="@drawable/radioon"
+                android:button="@android:color/transparent"/>
 
             <RadioButton
                 android:id="@+id/radio_therty"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_width="89dp"
+                android:layout_height="37dp"
                 android:layout_weight="0.33"
                 android:text="@string/therty_days"
-                android:textSize="14dp"
+                android:textSize="12sp"
                 android:textStyle="bold"
-                android:textColor="#7E7E7E"
 
-                android:checked="true"
-                android:background="@drawable/radioactive"
-                android:button="@drawable/radioon"/>
+                android:gravity="center"
+                android:textColor="@drawable/radiotextselector"
+                android:background="@drawable/radioon"
+                android:button="@android:color/transparent"/>
         </RadioGroup>
 
 

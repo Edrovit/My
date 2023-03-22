@@ -87,15 +87,16 @@
         android:id="@+id/progressBar"
         style="@style/ProgressBarStyle"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:progressTint="@color/purpur"
+        android:layout_height="48dp"
+        android:layout_marginBottom="-400dp"
         android:progressBackgroundTint="@color/purpur"
+
+        android:progressTint="@color/purpur"
+        app:layout_constraintBottom_toTopOf="@+id/textview_first"
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-
-        />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <include layout="@layout/button_sheet"
         android:layout_width="match_parent"
