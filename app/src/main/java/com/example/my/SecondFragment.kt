@@ -1,16 +1,17 @@
 package com.example.my
 
+import android.app.Activity
 import android.content.Context
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
+import android.view.inputmethod.InputMethodManager
 import android.widget.*
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.my.databinding.FragmentSecondBinding
+
 
 /**
  * A simple [Fragment] subclass as the second destination in the navigation.
@@ -48,6 +49,24 @@ class SecondFragment : Fragment() {
         adapter.setDropDownViewResource(R.layout.spinner_back)
         val simpleSpinner = view!!.findViewById<Spinner>(R.id.spinner)
         simpleSpinner?.adapter = adapter
+
+        simpleSpinner?.setOnTouchListener(object : View.OnTouchListener {
+            override fun onTouch(v: View?, event: MotionEvent?): Boolean {
+                if (event?.action == MotionEvent.ACTION_UP) {
+                    val imm: InputMethodManager =
+                        activity!!.getSystemService(Activity.INPUT_METHOD_SERVICE) as InputMethodManager
+
+                    var view = activity!!.currentFocus
+
+                    if (view == null) {
+                        view = View(activity)
+                    }
+                    imm.hideSoftInputFromWindow(view.windowToken, 0)
+                }
+                return false
+            }
+        })
+
 
         simpleSpinner?.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(
