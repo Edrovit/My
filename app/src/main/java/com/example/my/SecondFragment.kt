@@ -8,8 +8,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.EditText
-import android.widget.TextView
+import android.widget.*
 import androidx.navigation.fragment.findNavController
 import com.example.my.databinding.FragmentSecondBinding
 
@@ -38,18 +37,54 @@ class SecondFragment : Fragment() {
         return binding.root
 
 
+
     }
+
+
+
+    private fun setupSimpleSpinner() {
+
+        val adapter = CountryArrayAdapter(requireContext(), Countries.list!!)
+        adapter.setDropDownViewResource(R.layout.spinner_back)
+        val simpleSpinner = view!!.findViewById<Spinner>(R.id.spinner)
+        simpleSpinner?.adapter = adapter
+
+        simpleSpinner?.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(
+                parent: AdapterView<*>?,
+                view: View?,
+                position: Int,
+                id: Long
+            ) {
+
+                val selectedItem = parent!!.getItemAtPosition(position)
+           //     Toast.makeText(requireContext(), "$selectedItem Selected", Toast.LENGTH_SHORT).show()
+            }
+
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+                // Use as per your wish
+            }
+
+        }
+    }
+
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+            setupSimpleSpinner()
+
+
+
+
         val mySharedPreferences: SharedPreferences = requireActivity().getSharedPreferences("myPrefs", Context.MODE_PRIVATE)
 
-        val Save_name: String = mySharedPreferences.getString("NAME", null).toString()
-        val Save_sname: String = mySharedPreferences.getString("SNAME", null).toString()
+        val Save_name: String = mySharedPreferences.getString("NAME", "").toString()
+        val Save_sname: String = mySharedPreferences.getString("SNAME", "").toString()
         val Save_bdate: String = mySharedPreferences.getString("BDATE", null).toString()
         val Save_btime: String = mySharedPreferences.getString("BTIME", null).toString()
-        val Save_bcity: String = mySharedPreferences.getString("BCITY", null).toString()
+        val Save_bcity: String = mySharedPreferences.getString("BCITY", "").toString()
 
         val editName = view.findViewById<EditText>(R.id.FirstName)
         editName?.setText("$Save_name")

@@ -27,4 +27,30 @@
     <string name="therty_days">Month</string>
     <string name="seven_days">Week</string>
     <string name="two_days">3 Days</string>
+    <string-array name="langlist">
+        <item>English</item>
+        <item>普通话</item>
+        <item>हिन्दी</item>
+        <item>Español</item>
+        <item>Português</item>
+        <item>Русский</item>
+        <item>日本語</item>
+        <item>Deutsch</item>
+        <item>한국어</item>
+        <item>Français</item>
+        <item>Türkçe</item>
+        <item>Italiano</item>
+        <item>Tiếng Việt</item>
+        <item>Polski</item>
+        <item>Українська</item>
+        <item>ქართული</item>
+        <item>Bahasa Indonesia</item>
+        <item>ภาษาไทย</item>
+        <item>Nederlands</item>
+        <item>Română</item>
+        <item>Kiswahili</item>
+        <item>Čeština</item>
+        <item>Ελληνικά</item>
+
+    </string-array>
 </resources>
