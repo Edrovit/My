@@ -3,20 +3,25 @@ package com.example.my
 import android.app.Activity
 import android.content.Context
 import android.content.SharedPreferences
+import android.content.res.Configuration
+import android.content.res.Resources
 import android.os.Bundle
+import android.util.DisplayMetrics
 import android.util.Log
 import android.view.*
 import android.view.inputmethod.InputMethodManager
 import android.widget.*
+import androidx.core.app.ActivityCompat.recreate
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.my.databinding.FragmentSecondBinding
+import java.util.*
 
 
 /**
  * A simple [Fragment] subclass as the second destination in the navigation.
  */
-
+lateinit var resources: Resources
 
 class SecondFragment : Fragment() {
 
@@ -31,11 +36,34 @@ class SecondFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
+        val lang = Locale.getDefault().language
+        val mySharedPreferences: SharedPreferences = requireActivity().getSharedPreferences("myPrefs", Context.MODE_PRIVATE)
+        val LangSaved: String = mySharedPreferences.getString("LANGUI1", "Nohave").toString()
+        Log.d("TAG", "Язык сохраненный в настройках $LangSaved")
+
+        if (LangSaved == "Nohave") {
+
+            Log.d("TAG", "Язык не настроен")
+
+            val mapper = ListLangMapper()
+
+            val langmaped = mapper.maptolong(lang)
+            mySharedPreferences.edit().putString("LANGUI1", langmaped).apply()
+
+            val LangSaved1: String = mySharedPreferences.getString("LANGUI1", "Nohave").toString()
+            Log.d("TAG", "Я настроил язык как в Телефоне $LangSaved1")
+        }
+
+
+
+
+
         _binding = FragmentSecondBinding.inflate(inflater, container, false)
 
 
 
         return binding.root
+
 
 
 
@@ -49,6 +77,19 @@ class SecondFragment : Fragment() {
         adapter.setDropDownViewResource(R.layout.spinner_back)
         val simpleSpinner = view!!.findViewById<Spinner>(R.id.spinner)
         simpleSpinner?.adapter = adapter
+
+
+        val mySharedPreferences: SharedPreferences = requireActivity().getSharedPreferences("myPrefs", Context.MODE_PRIVATE)
+        val Save_lang: String = mySharedPreferences.getString("LANGUI1", "English").toString()
+        Log.d("TAG", "Я получидл язык пир создании спинера $Save_lang")
+
+        val mapper = ListLangMapper()
+        val spinnerPosition = mapper.Pos(Save_lang)
+        Log.d("TAG", "Я получидл язык пир создании спинера $Save_lang")
+
+        Log.d("TAG", "Я получидл позицию пир создании спинера $spinnerPosition")
+
+        simpleSpinner?.setSelection(spinnerPosition)
 
         simpleSpinner?.setOnTouchListener(object : View.OnTouchListener {
             override fun onTouch(v: View?, event: MotionEvent?): Boolean {
@@ -76,8 +117,39 @@ class SecondFragment : Fragment() {
                 id: Long
             ) {
 
-                val selectedItem = parent!!.getItemAtPosition(position)
-           //     Toast.makeText(requireContext(), "$selectedItem Selected", Toast.LENGTH_SHORT).show()
+                val selectedItem = parent!!.getItemAtPosition(position).toString()
+                val selectedItemname = selectedItem.substringAfterLast("=").substringBefore(')')
+
+                val mySharedPreferences: SharedPreferences =
+                    requireActivity().getSharedPreferences("myPrefs", Context.MODE_PRIVATE)
+                Log.d("TAG", "Пользователь изменил язык на $selectedItemname")
+                val mapper = ListLangMapper()
+
+                val shortlangname = mapper.maptoshort(selectedItemname)
+
+                mySharedPreferences.edit().putString("LANGUI1", "$selectedItemname").apply()
+
+                val config = resources.configuration
+                val lang = config.getLocales().toString().substringBefore(']').substringAfter('[')
+
+
+                if (lang!=shortlangname) {
+                    Log.d("TAG", "Сравнились $lang и $shortlangname")
+                    //     oldConfig = resources.configuration
+
+                    config.setLocale(Locale(shortlangname)) // устанавливаем язык на английский
+                    resources.updateConfiguration(
+                        config,
+                        resources.displayMetrics
+                    ) // обновляем конфигурацию приложения.
+                    val lang1 = config.getLocales().toString()
+                    Log.d("TAG", "Применен язык на $lang1")
+                    findNavController().navigate(R.id.action_SecondFragment_to_SecondFragment)
+                }
+
+
+
+
             }
 
             override fun onNothingSelected(parent: AdapterView<*>?) {
@@ -104,6 +176,16 @@ class SecondFragment : Fragment() {
         val Save_bdate: String = mySharedPreferences.getString("BDATE", null).toString()
         val Save_btime: String = mySharedPreferences.getString("BTIME", null).toString()
         val Save_bcity: String = mySharedPreferences.getString("BCITY", "").toString()
+        val Save_lang: String = mySharedPreferences.getString("LANGUI1", "English").toString()
+
+
+        Log.d("TAG", "Я получидл язык $Save_lang")
+
+        val simpleSpinner = view!!.findViewById<Spinner>(R.id.spinner)
+
+
+
+
 
         val editName = view.findViewById<EditText>(R.id.FirstName)
         editName?.setText("$Save_name")
@@ -148,7 +230,9 @@ class SecondFragment : Fragment() {
                 mySharedPreferences.edit().putString("BTIME", "$editBtimeString").apply()
                 mySharedPreferences.edit().putString("BCITY", "$editbCityString").apply()
 
-                Log.d("TAG", "Я сохранил NAME $editNameString SNAME $editSameString BDATE $editBdateString BTIME $editBtimeString BCITY $editbCityString")
+
+
+            Log.d("TAG", "Я сохранил NAME $editNameString SNAME $editSameString BDATE $editBdateString BTIME $editBtimeString BCITY $editbCityString")
                 findNavController().navigate(R.id.action_SecondFragment_to_FirstFragment)
 
 
@@ -159,14 +243,17 @@ class SecondFragment : Fragment() {
 
         binding.ButtonCancel.setOnClickListener {
 
+         //  resources.updateConfiguration(oldConfig, resources.displayMetrics)
             findNavController().navigate(R.id.action_SecondFragment_to_FirstFragment)
 
         }
 
                 binding.btnback.setOnClickListener {
 
-                    findNavController().navigate(R.id.action_SecondFragment_to_FirstFragment)
-
+       //             resources.updateConfiguration(oldConfig, resources.displayMetrics)
+                  findNavController().navigate(R.id.action_SecondFragment_to_FirstFragment)
+              //     val lang = Locale.getDefault().language
+              //      Log.d("TAG", "Lanig is $lang")
                 }
 
 
@@ -176,6 +263,7 @@ class SecondFragment : Fragment() {
 
 
     }
+
     }
 
 

@@ -44,6 +44,8 @@ class FirstFragment : Fragment() {
         _binding = FragmentFirstBinding.inflate(inflater, container, false)
         return binding.root
 
+
+
     }
 
     @SuppressLint("UseCompatLoadingForDrawables")

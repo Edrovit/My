@@ -1,6 +1,9 @@
 package com.example.my
 
+import android.content.Context
+import android.content.SharedPreferences
 import android.os.Bundle
+import android.util.Log
 import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
@@ -14,6 +17,7 @@ import com.example.my.databinding.ActivityMainBinding
 import okhttp3.OkHttpClient
 import okhttp3.Request
 import java.io.IOException
+import java.util.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -39,10 +43,7 @@ class MainActivity : AppCompatActivity() {
 
  */
 
-
-
     }
-
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.
         menuInflater.inflate(R.menu.menu_main, menu)

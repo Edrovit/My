@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Моё</string>
+    <string name="action_settings">Настройки</string>
+    <!-- Строки, используемые для фрагментов для навигации -->
+    <string name="first_fragment_label">Первый фрагмент</string>
+    <string name="second_fragment_label">Второй фрагмент</string>
+    <string name="next">Далее</string>
+    <string name="previous">Назад</string>
+
+    <string name="hello_first_fragment">В ближайшие несколько дней Null Null может ожидать смесь позитивных и негативных событий. С позитивной стороны, они могут почувствовать больше творческой и вдохновляющей энергии и смогут продвинуться в проектах, которые застряли. Они также могут почувствовать более глубокую связь со своей духовной стороной и легче обращаться к своей интуиции. С другой стороны, они могут почувствовать больше тревоги и перегрузки и могут нуждаться в некотором времени для релаксации и восстановления. Они также могут стать более чувствительными к критике и могут нуждаться в шаге назад, чтобы посмотреть на большую картину. В целом, Null Null должен уделить время своему психическому и эмоциональному благополучию и воспользоваться доступной им позитивной энергией.</string>
+    <string name="hello_second_fragment">Привет, второй фрагмент. Аргумент: %1$s</string>
+    <string name="hint_password_field">Имя</string>
+    <string name="hint_FirstName">Имя</string>
+    <string name="hint_LastName">Фамилия</string>
+    <string name="hint_BirthDate">дд/мм/гггг</string>
+    <string name="hint_BirthTime">чч:мм</string>
+    <string name="birthdate">Дата рождения</string>
+    <string name="birthtime">Время рождения</string>
+    <string name="hint_BirthCity">Город рождения</string>
+    <string name="Save">Сохранить</string>
+    <string name="Cancel">Отмена</string>
+    <string name="prognozedata">25.02.23-27.02.23</string>
+    <string name="chips_cmn">Общее *</string>
+    <string name="chips_love">Любовь</string>
+    <string name="chips_money">Деньги</string>
+    <string name="soon">Скоро</string>
+    <string name="therty_days">Месяц</string>
+    <string name="seven_days">Неделя</string>
+    <string name="two_days">3 дня</string>
+    <string-array name="langlist">
+    <item>English</item>
+    <item>普通话</item>
+    <item>हिन्दी</item>
+    <item>Español</item>
+    <item>Português</item>
+    <item>Русский</item>
+    <item>日本語</item>
+    <item>Deutsch</item>
+    <item>한국어</item>
+    <item>Français</item>
+    <item>Türkçe</item>
+    <item>Italiano</item>
+    <item>Tiếng Việt</item>
+    <item>Polski</item>
+    <item>Українська</item>
+    <item>ქართული</item>
+    <item>Bahasa Indonesia</item>
+    <item>ภาษาไทย</item>
+    <item>Nederlands</item>
+    <item>Română</item>
+    <item>Kiswahili</item>
+    <item>Čeština</item>
+    <item>Ελληνικά</item>
+
+    </string-array>
+
+</resources>
